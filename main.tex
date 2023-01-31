@@ -1,0 +1,562 @@
+% Preamble
+% Compile with XeLateX
+
+
+%
+% TODO: Trocar foto do Jack
+% TODO: mudar link código QR
+%
+
+
+\documentclass[11 pt,oneside,a4paper,titlepage]{article}
+\usepackage{preamble}
+
+
+\graphicspath{{PIC/}}
+
+\newif\ifen
+\newif\ifpt
+
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\pt}[1]{\ifpt#1\fi}
+
+%\pttrue
+\entrue
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\sidebar{sideBarColor!21}
+\simpleheader{titleBackColor}{Pedro}{Chaparro}{\en{Cyber Security Enthusiast | Computer Science and Engineering Student}\pt{Entusiasta de Cibersegurança | Estudante de Engenharia Informática}}{white}
+
+% Start Minipages
+\vspace*{3.49cm}% start 8 cm from the top of the page}
+    \adjustbox{valign=t}{\begin{minipage}{6.3cm} % large 7.4 cm from the top
+    \vspace*{1.2cm} % text starts 1cm under the top of the minipage
+            
+        % Picture
+        \begin{center}
+        \begin{tikzpicture}
+            \node[
+            circle,
+            minimum size=\cvPictureWidth,
+            path picture={
+            \node at (path picture bounding box.center){
+             \includegraphics[width=\cvPictureWidth]{Myself5.png}
+             };
+             }]
+            {};
+        \end{tikzpicture}
+        \end{center}
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Profile section
+        \ruleline{\faUser \ \textbf{\en{About me}\pt{Sobre mim}}}
+        \en{I am a student at Instituto Superior Técnico, taking a Computer Science and Engineering degree who aims to enroll in a Master's Degree.\\
+I like programming in general and I am really interested in the CyberSecurity field - I have been a finalist in two National events that led me to European events in Prague, Czech Republic, and in Vienna, Austria.}
+        \pt{Sou um estudante no Instituto Superior Técnico que está a tirar Licenciatura em Engenharia Informática e de Computadores e que tenciona fazer um Mestrado.\\
+Eu gosto de programar no geral e estou muito interessado na área de Ciber Segurança - já fui finalista em dois eventos Nacionais que me levaram a eventos Europeus em Praga, República Checa, e em Viena, Austria.}%
+        \vspace*{0.52cm}
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Contact Section
+        \ruleline{\faPhone \ \textbf{\en{Contacts}\pt{Contactos}}}
+        \newline
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        % \node{\faMale};
+        %  & \node{Born on xx/xx/1690, Age ??};\\
+        \node{\faHome}; 
+        & \node{\en{Lisbon, Portugal}\pt{Lisboa, Portugal}};\\
+        \node{\faEnvelope}; 
+         & \node{\href{mailto:pedro.chaparro@tecnico.ulisboa.pt}{pedro.chaparro@tecnico.ulisboa.pt}};\\
+         % \node{\faEnvelopeO}; 
+         % & \node{\href{mailto:jacksparrow2@yahoo.it}{jacksparrow2@yahoo.it}};\\
+        % \node{\faPhone}; 
+        %  & \node{+39 xxxxxxxxxx};\\ 
+        \node{\faLinkedinSquare}; 
+        & \node{Linkedin: \href{https://www.linkedin.com/in/pedro-chaparro/}{pedro-chaparro}};\\
+        \node{\faGithubSquare}; 
+        & \node{Github: \href{https://github.com/PedroChaps}{@pedroChaps}};\\
+        \node{\faLink}; 
+        & \node{Website: \href{https://chaparro.me}{chaparro.me}};\\
+        % \node{\aiResearchGateSquare}; 
+        % & \node{\href{your Research Gate Link here}{Research Gate: Jack}};\\
+        % \node{\aiOrcid}; 
+        % & \node{\href{your Orcid Link here}{ORCID: xxxx-xxxx-xxxx-xxxx}};\\
+        % \node{\faCar};
+        % & \node{Car Available, Driving License B};\\
+         };
+        \end{tikzpicture} 
+        \newline
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ruleline{\faComments \ \textbf{\en{Languages}\pt{Linguas}}}
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\flag{Portugal.png}};
+        & \node{\en{Portuguese - Native Language}\pt{Português - Lingua Nativa}};\\
+        \node{\flag{England.png}};
+        & \node{\en{English - Advanced Language}\pt{Inglês - Lingua Avançada}};\\
+        };
+        \end{tikzpicture} 
+        \vspace*{0.52cm}
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % QR Code
+        \ruleline{\faDownload \ \textbf{\en{Download My CV}\pt{Download do CV}}}
+        % \scriptsize
+        \centering
+        \en{Download my CV via the QR below:}\pt{É possível fazer download do meu CV através do código QR:}
+        \begin{center}
+        
+            \textcolor{black}{\qrcode[height=4.5cm]{
+                \en{cv.chaparro.me/}
+                \pt{cv-pt.chaparro.me/}}} \\
+            
+        \end{center}
+        \en{\href{cv.chaparro.me}{cv.chaparro.me}}
+        \pt{\href{cv-pt.chaparro.me}{cv-pt.chaparro.me}}
+        
+    \end{minipage}} %
+    \hfill 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MAIN SECTION %%%%%%%%%%%%%%%%%%%%
+    \adjustbox{valign=t}{\begin{minipage}{12.3cm}
+        \vspace*{1cm}
+        \section*{{\faGraduationCap} \en{EDUCATION}\pt{EDUCAÇÃO}}
+        
+
+        % \MySection{2018-Ongoing}{Ship.png}{Master Degree}{Pirate University}{Tortuga, Caribbean}{Faculty}{A description of your piracy. \\\textbf{Degree: 110/110 cum laude}}
+            
+        % \vspace*{0.22cm}
+            
+        \MySection{\en{Sep. 2020 - Present}\pt{Set. 2020 - Presente}}
+                  {}
+                  {\en{Bachelor Degree}\pt{Licenciatura}}
+                  {\en{\href{https://tecnico.ulisboa.pt/}{Instituto Superior Técnico (IST) - University of Lisbon}}\pt{\href{https://tecnico.ulisboa.pt/}{Instituto Superior Técnico (IST) - Universidade de Lisboa}}} 
+                  {\en{Lisbon, Portugal}\pt{Lisboa}}
+                  {\en{Computer Science and Engineering | LEIC-A}\pt{Engenharia Informática e de Computadores | LEIC-A}}
+                  {\en{Currently pursing a BSc Degree at Portugal’s top engineering school}\pt{Atualmente a fazer uma licenciatura na melhor escola de engenharia de   Portugal} 
+                   \begin{itemize}
+                        \item \en{Top 5\% amongst students who enrolled in LEIC-A in 2020/2021 ($\sim$180 students)}\pt{Top 5\% entre estudantes que começaram a licenciatura no ano 2020/2021 ($\sim$180 alunos)}
+                        \item \en{Awarded an \href{https://drive.google.com/file/d/1RQRo_DN7KK2AviGREd-fFRv_Et6KDZot/view?usp=sharing}{Academic Merit Diploma} for the 2020/2021 academic year due to excellent performance.}\pt{Atribuído um \href{https://drive.google.com/file/d/1RQRo_DN7KK2AviGREd-fFRv_Et6KDZot/view?usp=sharing}{Diploma de Mérito Académico} no ano letivo 2020/2021 devido a desempenho excelente.}
+                   \end{itemize}
+                  \textbf{\en{Current Average Grade}\pt{Média Atual Geral}: 17.5v/20v}}
+                
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Work Experience
+        \section*{{\faSuitcase} \en{PROFESSIONAL EXPERIENCE}\pt{EXPERIÊNCIA PROFISSIONAL}}
+            
+        \MySectionNoPic{\en{Dez. 2021 - Present}\pt{Dez. 2021 - Presente}}
+                       {\en{Research Investigator \& \\System Administrator}\pt{Iniciado à investigação \& \\Administrador de Sistemas}}
+                       {\en{Lisbon}\pt{Lisboa}}
+                       {\en{Dept. of Computer Networking, IST}\pt{Núcleo de Redes e Telecomunicações, IST}}
+                       {\en{I Investigate and develop new methodologies that enable the management of network infrastructures,
+                        which lead to increased availability and network performance, as well as adding new services to the IST
+                        community.\\
+                        I Install, maintain and administer network equipment, namely ethernet, WiFi, switches, routers,
+                        services with various operating systems and Linux.}
+                        \pt{Investigo e desenvolvo novas metodologias que permitem otimizar a gestão de infraestruturas de rede,
+                            que conduzem ao aumento de disponibilidade e performance da rede, bem como a adição de novos
+                            serviços aos membros da comunidade do IST.\\
+                            Instalo, faço manutenção e administro equipamentos de rede, nomeadamente ethernet, WiFi, switches, routers, e diversos serviços com sistemas operativos baseados em Linux.}}  
+            
+        \vspace*{0.22cm}
+            
+        \MySectionNoPic{\en{Sep. 2020 - Present}\pt{Set. 2020 - Presente}}
+                       {\en{High School Math Tutor}\pt{Explicador de Matemática}}
+                       { }
+                       {\en{Remote}\pt{Remoto}}
+                       {\en{I’ve been giving online Math Classes to a total of 8 students ranging from 8th to 12th grade. With this, I’ve developed a better capacity of communication and collaboration.}
+                        \pt{Faculto explicações de Matemática a 8 alunos de diversos anos (8º - 12º). Com isto, desenvolvi a minha capacidade de comunicação e colaboração.}}  
+
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Programming Languages
+        \section*{{\faCode} \en{PROGRAMMING, TECH STACK \& IT SKILLS}\pt{PROGRAMAÇÃO, TECH STACK \& SKILLS DE IT}}
+    
+        \ITCcompetence{\pt{Linguagens de Programação} \en{Programming Languages}}{
+        \textbf{Python}: \en{Advanced. Used in 4 projects, for scripting and everything related to Cyber Security.}\pt{Avançado. Usado em 4 projetos, para scripting e para tudo relacionado com Ciber Segurança.}\\
+        \textbf{C}: \en{Advanced. Used in 4 projects.}\pt{Avançado. Usado em 4 projetos.}\\
+        \textbf{React \& Javascript}: \en{Intermediate. Used for the creation of my \href{https://chaparro.me}{personal website}.}\pt{Intermédio. Usado para a criação do meu \href{https://chaparro.me}{website pessoal}.}\\
+        \textbf{PgSQL}: \en{Intermediate. Used in 1 project and in Cyber Security contexts.}\pt{Intermédio. Usado em 1 projeto e em contextos de Ciber Segurança.}\\
+        \textbf{Java}: \en{Intermediate. Used in 1 project.}\pt{Intermédio. Usado em 1 projeto.}\\
+        }
+        
+        \vspace*{0.22cm}
+    
+        \ITCcompetence{Frameworks}{
+        \textbf{Flask}: \en{Intermediate. Used in 1 project and in Cyber Security contexts.}\pt{Intermédio. Usado em 1 projeto e em contextos de Ciber Segurança.}\\
+        \textbf{Django}: \en{Beginner. Used in 1 project.}\pt{Iniciante. Usado em 1 projeto.}\\
+        \textbf{Bootstrap}: \en{Intermediate. Used in 2 projects.}\pt{Intermédio. Usado em 2 projetos.}\\
+        \textbf{Tailwind \& ThreeJS}: \en{Intermediate. Used for the creation of my \href{https://chaparro.me}{personal website}.}\pt{Intermédio. Usado na criação do meu \href{https://chaparro.me}{website pessoal}.}\\
+        }
+        
+        \vspace*{0.22cm}
+    
+        \ITCcompetence{\en{Photo \& Video Editing}\pt{Edição de Fotos \& Vídeo}}{
+        \textbf{Gimp \& Premiere Pro CC}: \en{Intermediate. Used in some situations, as a hobby.}\pt{Intermédio. Usado em algumas situações, como um hobby.}}  \\
+        
+    
+        \vspace*{0.22cm}
+    
+        \ITCcompetence{\en{Computer Networking}\pt{Redes de Computadores}}{
+        \textbf{\pt{\textit{Switches} de Alcatel \& Juniper}\en{Alcatel \& Juniper's switches}}: \en{Intermediate. I have configured and managed many switches from this companies.}\pt{Intermédio. Configurei e geri vários equipamentos destas marcas.}\\
+        \textbf{\en{Cisco's Access Points}\pt{Pontos de Acesso Cisco}}: \en{Beginner. I have configured and managed some access points from Cisco.}\pt{Iniciante. Configurei e geri alguns equipamentos da Cisco.}\\
+        }
+        % \begin{multicols}{2}    
+        % \begin{itemize}
+        % \footnotesize
+        %     \item \textbf{Python}: \en{Advanced}\pt{Avançado}
+        %     \item \textbf{C}: \en{Advanced}\pt{Avançado}
+        %     \item \textbf{React}: \en{Intermediate}\pt{Intermédio}
+        %     \item \textbf{Java}: \en{Intermediate}\pt{Intermédio}
+        %     \item \textbf{PgSQL}: \en{Intermediate}\pt{Intermédio}
+        %     \item \textbf{Javascript}: \en{Intermediate}\pt{Intermédio}
+        %     %\item[\vspace{\fill}]
+        % \end{itemize}
+        % \end{multicols}
+        % \\\
+        % \vspace*{-0.5cm}
+        % \begin{multicols}{2}    
+        % \begin{itemize}
+        % \footnotesize
+        %     \item \textbf{Flask}: \en{Intermediate}\pt{Intermédio}
+        %     \item \textbf{Django}: \en{Beginner}\pt{Iniciante}
+        %     \item \textbf{Bootstrap}: \en{Intermediate}\pt{Intermédio}
+        %     \item \textbf{Tailwind}: \en{Intermediate}\pt{Intermédio}
+        %     \item \textbf{ThreeJS}: \en{Beginner}\pt{Iniciante}
+        %     \item[\vspace{\fill}]
+        % \end{itemize}
+        % \end{multicols}
+            
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Publications
+        % \section*{{\aiOBP} PUBLICATIONS}
+            
+        % \publication{Journal Article}{1729}{How I almost got killed by Lady Swan}{Jack Sparrow, Elizabeth Swan, William Turner III, Davy Jones}{Tortuga Printing Press}{10.3389/doicodedoicode}
+            
+        % \vspace*{0.22cm}
+             
+        % \publication{Abstract}{1725}{The Kraken and other stories}{Jack Sparrow, Hector Barbossa, Jack the Monkey, Joshamee Gibbs}{1st Congress of Pirate}{10.1016/doicodedoicode}
+            
+        % \vspace*{0.22cm}
+            
+        % \publication{Conference Proceedings}{1724}{How I lost my ship and how to get it back}{Jack Sparrow}{Conference in Tortuga}{10.5220/doidoidoi}
+            
+        % \vspace*{0.22cm}
+
+         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Information Technology Skills
+        
+        % \section*{{\faDesktop} VOLUNTEERING \& COMMUNITY WORK}
+
+        % % Pôr as "CONQUISTAS" 
+        
+        % \ITCcompetence{Data Analysis}{
+        % \textbf{MATLAB}: \textit{Higly Specialized}\\
+        % \textbf{Wolfram Mathematica}: \textit{Intermediate}\\
+        % \textbf{Jupiter Notebook}: \textit{Intermediate}\\
+        % }
+        
+        % \vspace*{0.22cm}
+    
+        % \ITCcompetence{Modeling and Simulation}{
+        % \textbf{Simulink} : \textit{Intermediate}  \\
+        % \textbf{LTSpice}: \textit{Intermediate}
+        % }
+        
+        % \vspace*{0.22cm}
+    
+        % \ITCcompetence{Audio Processing}{
+        % \textbf{Reaper} : \textit{Advanced}  \\
+        % }
+    
+        % \vspace*{0.22cm}
+    
+        % \ITCcompetence{Office Automation}{
+        % \textbf{MS Office (Excel, Word, PowerPoint)}: \textit{Higly Specialized}\\
+        % \textbf{\LaTeX}: \textit{Advanced}\\
+        % }
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            
+    \end{minipage}} %
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second Page
+\newpage
+
+\sidebar{sideBarColor!25}
+\newpageheader{titleBackColor}{Pedro}{Chaparro}{\en{Cyber Security}\pt{Ciber Segurança}  \faLightbulbO \ \en{Programmer}\pt{Programador} }{white}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SIDEBAR %%%%%%%%%%%%%%%%%%%
+\adjustbox{valign=t}{%
+\begin{minipage}{6.3cm} 
+\vspace*{0.4cm} % text starts 0.4cm under the top the header
+        
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Skill and Strengths 
+    \ruleline{\faCubes \ \textbf{\en{Soft Skills and Strengths}\pt{\textit{Soft Skills} e forças}}}
+    \vspace*{-0.5cm}
+    \begin{center}
+        \cvtag{\en{Adaptability}\pt{Adaptabilidade}}
+        \cvtag{\en{Autonomy}\pt{Autonomia}}
+        \cvtag{\en{Creativity}\pt{Creatividade}}
+        \cvtag{\en{Curiosity}\pt{Curiosidade}}
+        \cvtag{\en{Eye for Details}\pt{Olho pelos detalhes}}
+        \cvtag{\en{Flexibility}\pt{Flexibilidade}}
+        \cvtag{\en{Good Communication}\pt{Boa Comunicação}}
+        \cvtag{\en{Good Listener}\pt{Bom Ouvinte}}
+        \cvtag{\en{Leadership}\pt{Liderança}}
+        \cvtag{\en{Love Learning New Things}\pt{Aprender Coisas Novas}}
+        \cvtag{\en{Patience}\pt{Paciência}}
+        \cvtag{\en{Planning and Organization}\pt{Planeamento e Organização}}
+        \cvtag{\en{Problem Solving}\pt{Resolver Problemas}}
+        \cvtag{\en{Self Confidence}\pt{Auto Confiança}}
+        \cvtag{\en{Team Working}\pt{Trabalho em Equipa}}
+    \end{center}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Professional Skills
+    % \ruleline{\textbf{\en{Handy Tools}\pt{Ferramentas úteis}}}
+    % \begin{center}
+    %     \cvtag{Git, GitHub \& GitLab}
+    %     \cvtag{Linux (Ubuntu, Debian)}
+    %     \cvtag{\en{Driving Licence}\pt{Carta de condução}}
+    %     \cvtag{Skill 4}
+    %     \cvtag{Skill 5}
+    % \end{center}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Handy Tools
+    \ruleline{\textbf{\faLegal \ \en{Handy Tools}\pt{Ferramentas úteis}}}
+    \small
+    %\begin{multicols}{2}
+        \begin{itemize} 
+            \item  Git, GitHub \& GitLab \faCodeFork
+            \item  Linux (Ubuntu, Debian) \faLinux
+            \item  \en{Driving Licence}\pt{Carta de condução} \faCar
+            \item Markdown \faAlignLeft
+        \end{itemize}
+    %\end{multicols}
+
+\end{minipage}
+}%
+\hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN %%%%%%%%%%%%%%%%%%%%%%%%%
+\adjustbox{valign=t}{%
+\begin{minipage}{12.3cm}
+    \vspace*{0.4cm}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Peer Reviews
+    % \section*{{\faBook} ACADEMIC PEER REVIEWS}
+    % \footnotesize I did academic peer review for the following journals: 
+    % \begin{itemize}
+    %     \footnotesize
+    %      \item{\textbf{Scientific Piracy}, IF: 4.996 (1720), September 1720;}
+    %  \end{itemize}
+
+
+        
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Honors and Achievements
+    \section*{{\faTrophy} \en{HONORS AND ACHIEVEMENTS}\pt{HONRAS E CONQUISTAS}}
+    % TODO TOP 7 CRYPTOHACK
+    \ITCcompetence{2022}{
+    \textbf{\en{Participation in ECSC 22}\pt{Participação no ECSC 22}}: \en{Given the same reason as the previous year, I participated in the \href{https://ecsc.eu/}{ECSC} 22 event held in Vienna, Austria, as part of team Portugal.}\pt{À semelhança do ano anterior, participei no evento \href{https://ecsc.eu/}{ECSC} 22 em Vienna, Áustria, como parte da equipa Portugal.}\\\\
+    \textbf{\en{CSCPT 22 Finalist}\pt{Finalista do CSCPT 22}}: \en{Finalist of the \href{https://www.linkedin.com/posts/pedro-chaparro_cybersecuritychallengept2022-cybersecurity-activity-6957628283014295553-bBI0?utm_source=linkedin_share&utm_medium=member_desktop_web}{CSCPT} 22 event, the 
+ next-year event of CSCPT 21.}\pt{Finalista do evento \href{https://www.linkedin.com/posts/pedro-chaparro_cybersecuritychallengept2022-cybersecurity-activity-6957628283014295553-bBI0?utm_source=linkedin_share&utm_medium=member_desktop_web}{CSCPT} 22, o evento seguinte ao CSCPT 21.}\\\\
+    \textbf{\en{Good position in CryptoHack}\pt{Boa posição no CryptoHack}}: \en{I achieved a good position in the \href{https://cryptohack.org/}{CryptoHack} platform, an academy to learn cryptography in a gamified way, achieving the 7th place of the Portuguese Leaderboard.}\pt{Alcançei uma boa posição na plataforma \href{https://cryptohack.org/}{CryptoHack}, uma plataforma para aprender criptografia de uma forma gamificada, alcançando o 7º lugar na \textit{leaderboard} portuguesa.}\\
+    }
+    
+    \vspace*{0.22cm}
+
+    
+    \ITCcompetence{2021}{
+    \textbf{\en{Participation in ECSC 21}\pt{Participação no ECSC 21}}: \en{Because of being a finalist in CSCPT 21, I participated in the \href{https://ecsc.eu/}{European Cyber Security Challenge} (ECSC) 21 event held in Prague, Czech Republic, as part of team Portugal. The Portuguese team achieved a record-breaking 7th-place finish.}\pt{Devido a ter sido finalista no CSCPT 21, participei no evento \href{https://ecsc.eu/}{European Cyber Security Challenge} (ECSC) 21 em Praga, República Checa, como parte da equipa Portugal. A equipa portuguesa alcançou um lugar recorde: 7º lugar.}\\\\
+    \textbf{\en{CSCPT 21 Finalist}\pt{Finalista do CSCPT 21}}: \en{Finalist of the \href{https://twitter.com/CyberChallPT/status/1440604680430571527?s=20&t=Gj-LnD0GGoTlMDU9GqoPKA}{Cyber Security Challenge Portugal} (CSCPT) 21 event, a nationwide event that confronted participants with cyber security challenges.}\pt{Finalista do evento \href{https://twitter.com/CyberChallPT/status/1440604680430571527?s=20&t=Gj-LnD0GGoTlMDU9GqoPKA}{Cyber Security Challenge Portugal} (CSCPT) 21, um evento nacional que confrontou os participantes com desafios de ciber segurança.}\\\\
+    \textbf{\en{Certificate of Appreciation}\pt{Certificado de apreciação}}: \en{\href{https://chaparro.me/static/media/ecsc2021_award.ff9407b9649daf788e4e.jpeg}{Certificate of Appreciation} offered by the ECSC 21 organization, regarding the performance and participation in the event.}\pt{\href{https://chaparro.me/static/media/ecsc2021_award.ff9407b9649daf788e4e.jpeg}{Certificado de Apreciação} oferecido pela organização do ECSC 21, devido à performance e participação no evento.}\\
+    }
+    
+    \vspace*{0.22cm}
+
+    \ITCcompetence{2020 - 2021}{
+    \textbf{\en{Academic Merit Award}\pt{Certificado de mérito Académico}}: \en{Received an \href{https://drive.google.com/file/d/1RQRo_DN7KK2AviGREd-fFRv_Et6KDZot/view?usp=sharing}{Academic Merit Diploma} for the 2020/2021 academic year given by IST due to excellent performance.}\pt{Recebi um \href{https://drive.google.com/file/d/1RQRo_DN7KK2AviGREd-fFRv_Et6KDZot/view?usp=sharing}{Diploma de Mérito Académico} pelo ano académico 2020/2021 oferecido pelo IST.}
+    }
+    
+    \vspace*{0.22cm}
+
+    \ITCcompetence{2017}{
+    \textbf{\en{Academic Merit Municipality award}\pt{Certificado de Mérito pelo concelho}}: \en{Received an \href{https://drive.google.com/file/d/1kkXHaJvN7ZBZgwPm1_U06UGlpru8YjJR/view?usp=sharing}{award} given by the municipality of residence due to excellence and activities developed during high school.}\pt{Recebi um \href{https://drive.google.com/file/d/1kkXHaJvN7ZBZgwPm1_U06UGlpru8YjJR/view?usp=sharing}{certificado} oferecido pelo concelho de residência devido à excelência e às atividades desenvolvidas durante a escola básica e secundária.}
+    }
+
+    \vspace*{0.22cm}
+
+    \ITCcompetence{2013 - 2020}{
+    \textbf{\en{High School certificates}\pt{Certificados escolares}}: \en{Received multiple \href{https://drive.google.com/file/d/1smWVwgBsCc7JFi_sMmPO3mSLzMxbtMLO/view?usp=sharing}{Merit and Excellence awards} during high school.}\pt{Recebi múltiplos \href{https://drive.google.com/file/d/1smWVwgBsCc7JFi_sMmPO3mSLzMxbtMLO/view?usp=sharing}{certificados de Mérito e de Honra} ao longo da escola básica e secundária.}
+    }
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Honours and Awards
+    
+    \section*{{\faChild} \en{VOLUNTEERING \& COMMUNITY WORK}\pt{VOLUNTARIADO \& TRABALHO COMUNITÁRIO}}
+
+    % Pôr as "CONQUISTAS" 
+    \begin{itemize}\footnotesize
+        \item \textbf{\en{Fitness Progress guide}\pt{Guia da jornada de Fitness}}: \en{Wrote a \href{https://www.notion.so/pedro-chaps/MY-FITNESS-JOURNEY-5e3eb18b413d4931a63725ba6cabd296}{journal} to help those who lacked motivation to start their fitness journey, showing my progress since the start.}\pt{Escrevi um \href{https://www.notion.so/pedro-chaps/A-MINHA-JORNADA-e4c6ff1d9aa641019b6c5dd16d7a91c2}{registo do meu progresso} para ajudar aqueles que precisavam de motivação para começar a sua jornada de \textit{fitness}, mostrando o meu progresso desde o ínicio.}
+        \item \textbf{\en{Website creation guide}\pt{Guia da criação do meu website}}: \en{Wrote a \href{https://github.com/PedroChaps/pedrochaps.github.io#readme}{guide} that explains the exact step-by-step creation of my website, for those that, like me, didn't know how to start.}\pt{Escrevi um \href{https://github.com/PedroChaps/pedrochaps.github.io#readme}{guia} que explica o processo de criação do meu website, para aqueles que, tal como eu, não sabiam por onde começar.}
+        \item \textbf{Resumos LEIC-A}: \en{Wrote the class notes of the "Computer Networking" course in the \href{https://resumos.leic.pt/rc/}{Community website} of class notes of my BSc.}\pt{Escrevi os resumos da disciplina "Redes de Computadores" no website de resumos comunitários do meu curso \href{https://resumos.leic.pt/rc/}{Resumos LEIC-A}.}
+    \end{itemize}
+    % \ITCcompetence{Data Analysis}{
+    % \textbf{MATLAB}: \textit{Higly Specialized}\\
+    % \textbf{Wolfram Mathematica}: \textit{Intermediate}\\
+    % \textbf{Jupiter Notebook}: \textit{Intermediate}\\
+    % }
+    
+    % \vspace*{0.22cm}
+
+    % \ITCcompetence{Modeling and Simulation}{
+    % \textbf{Simulink} : \textit{Intermediate}  \\
+    % \textbf{LTSpice}: \textit{Intermediate}
+    % }
+    
+    % \vspace*{0.22cm}
+
+    % \ITCcompetence{Audio Processing}{
+    % \textbf{Reaper} : \textit{Advanced}  \\
+    % }
+
+    % \vspace*{0.22cm}
+
+    % \ITCcompetence{Office Automation}{
+    % \textbf{MS Office (Excel, Word, PowerPoint)}: \textit{Higly Specialized}\\
+    % \textbf{\LaTeX}: \textit{Advanced}\\
+    % }
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Hobbies
+    
+    \section*{{\faStar} HOBBIES}
+
+    % Pôr as "CONQUISTAS" 
+    \begin{itemize}\footnotesize
+        \item \textbf{\en{Video games}\pt{Videojogos}}: \en{Since I was little, I have always enjoyed playing video games. I have played on different gaming consoles, from the ps2 to the computer, and I like multiple genres. This is one of my main motivations to like new technologies so much.}\pt{Desde pequeno, sempre gostei de jogar videojogos. Joguei em várias consolas e dispositivos, desde a PS2 até ao computador, e gosto de vários géneros. Uma das principais motivações para gostar tanto de tecnologias.}
+        \item \textbf{\en{Gym}\pt{Ginásio}}: \en{I attend a local gym since June of 2019, after losing a total of 99 lbs in the span of a year and three months, by sheer will and in a totally independent way. \\Since then, I have maintained a healthy lifestyle which I am really proud of.}\pt{Frequento um ginásio desde junho de 2019, após ter perdido um total de 44.9kg ao longo de um ano e 3 meses, por vontade própria e de uma forma totalmente independente.}
+        \item \textbf{Security Team @ Técnico}: \en{I am a member of the Cyber Security of IST \href{https://sectt.github.io/}{Security Team @ Técnico} (STT), since the beginning of the course. The team usually gathers remotely and presentially to play CTF (Capture The Flag) events together. Besides that, the team also does weekly meetings where generally the senior members talk about advanced topics.}\pt{Sou membro da equipa de Ciber Segurança do IST  \href{https://sectt.github.io/}{Security Team @ Técnico} (STT), desde a entrada na universidade. A equipa participa em torneios CTF e faz reuniões semanais.}
+    \end{itemize}
+    
+    % \ITCcompetence{Data Analysis}{
+    % \textbf{MATLAB}: \textit{Higly Specialized}\\
+    % \textbf{Wolfram Mathematica}: \textit{Intermediate}\\
+    % \textbf{Jupiter Notebook}: \textit{Intermediate}\\
+    % }
+    
+    % \vspace*{0.22cm}
+
+    % \ITCcompetence{Modeling and Simulation}{
+    % \textbf{Simulink} : \textit{Intermediate}  \\
+    % \textbf{LTSpice}: \textit{Intermediate}
+    % }
+    
+    % \vspace*{0.22cm}
+
+    % \ITCcompetence{Audio Processing}{
+    % \textbf{Reaper} : \textit{Advanced}  \\
+    % }
+
+    % \vspace*{0.22cm}
+
+    % \ITCcompetence{Office Automation}{
+    % \textbf{MS Office (Excel, Word, PowerPoint)}: \textit{Higly Specialized}\\
+    % \textbf{\LaTeX}: \textit{Advanced}\\
+    % }
+
+
+
+
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Certificates
+    % \section*{{\faCertificate} CERTIFICATES}
+    
+    % \adjustbox{valign=t}{\begin{minipage}{2cm}
+    % \begin{center}
+    %     \includegraphics[width=1.2cm]{IBM.png}
+    % \end{center}
+    % \end{minipage}}
+    % \hfill \vline \hfill
+    % \adjustbox{valign=t}{\begin{minipage}{9cm}
+    %     \begin{itemize}
+    %         \scriptsize 
+    %         \item Python for Data Science, AI \& Development (\textit{Coursera, 2022})
+    %     \end{itemize}
+    % \end{minipage}}
+    
+    % \vspace*{0.2cm}
+    
+    % \adjustbox{valign=t}{\begin{minipage}{2cm}
+    % \begin{center}
+    %     \includegraphics[width=2cm]{Matlab.png}
+    % \end{center}
+    % \end{minipage}}
+    % \hfill \vline \hfill
+    % \adjustbox{valign=t}{\begin{minipage}{9cm}
+    %     \begin{itemize}
+    %         \scriptsize 
+    %         \item Pirate Processing with MATLAB (\textit{Mathworks, 2022})
+    %         \item Signal Processing with MATLAB (\textit{Mathworks, 2022})
+    %         \item Deep Learning with MATLAB (\textit{Mathworks, 2022})
+    %         \item Machine Learning with MATLAB (\textit{Mathworks, 2021})
+    %     \end{itemize}
+    % \end{minipage}}
+    
+    % \vspace*{0.2cm}
+    
+    % \adjustbox{valign=t}{\begin{minipage}{2cm}
+    % \begin{center}
+    %     \includegraphics[width=1.2cm]{google.png}
+    % \end{center}
+    % \end{minipage}}
+    % \hfill \vline \hfill
+    % \adjustbox{valign=t}{\begin{minipage}{9cm}
+    %     \begin{itemize}
+    %         \scriptsize 
+    %         \item How to became a Web Pirate (\textit{Google Pirate School, 2022})
+    %         \item item 2
+    %         \item item 3
+    %         \item item 4
+    %     \end{itemize}
+    % \end{minipage}}
+    
+    % \vspace*{0.2cm}
+    
+\end{minipage}}
+
+
+\end{document}
